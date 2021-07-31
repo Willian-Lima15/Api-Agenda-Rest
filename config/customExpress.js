@@ -1,8 +1,12 @@
 const express = require('express')
 const consign = require('consign')
+const bodyParser = require('body-parser')
 
-module.express = () => {
+module.exports = () => {
     const app = express()
+
+    app.use(bodyParser.utlencoded({ extended: true }))
+    app.use(bodyParser.json())
 
     consign()
         .include('controllers')
